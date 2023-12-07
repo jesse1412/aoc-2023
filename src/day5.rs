@@ -90,7 +90,7 @@ fn get_mapped_seeds(mappings: HashMap<String, Vec<Mapping>>, seeds: &mut [u64]) 
         for (i, seed) in (seeds).to_vec().clone().iter().enumerate() {
             for map in maps {
                 map_name = &map.to_name;
-                if *seed >= map.start_pos as u64 && *seed < map.end_pos as u64 {
+                if *seed >= map.start_pos && *seed < map.end_pos {
                     seeds[i] = (*seed as i64 + map.offset) as u64;
                 }
             }
@@ -103,18 +103,18 @@ fn get_mappings(mut lines: std::str::Lines<'_>) -> HashMap<String, Vec<Mapping>>
     while let Some(s) = lines.next() {
         if s.len() > 1 {
             let (from_name, to_name) = s.split_once(' ').unwrap().0.split_once("-to-").unwrap();
-            while let Some(s) = lines.next() {
+            for s in lines.by_ref() {
                 if s.len() <= 1 {
                     break;
                 }
                 let mut split_line = s.split(' ');
                 let to_pos = split_line.next().unwrap().parse::<u64>().unwrap();
                 let start_pos = split_line.next().unwrap().parse::<u64>().unwrap();
-                let offset = (to_pos as i64 - start_pos as i64) as i64;
+                let offset = to_pos as i64 - start_pos as i64;
                 let end_pos = start_pos + split_line.next().unwrap().parse::<u64>().unwrap();
                 mappings
                     .entry(String::from(from_name))
-                    .or_insert(Vec::new())
+                    .or_default()
                     .push(Mapping {
                         from_name: String::from(from_name),
                         to_name: String::from(to_name),
