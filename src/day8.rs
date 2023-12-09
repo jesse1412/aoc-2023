@@ -8,9 +8,7 @@ pub fn part1() -> i64 {
     let mappings = get_mappings(input);
     // println!("{:?}", mappings);
     let curr_node = "AAA";
-    let moves = get_moves_to_z(curr_node, &mappings, lr_iter);
-    println!("{}", moves);
-    0
+    get_moves_to_z(curr_node, &mappings, lr_iter)
 }
 
 fn get_moves_to_z<'a>(
