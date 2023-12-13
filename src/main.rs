@@ -49,6 +49,9 @@ fn main() {
     println!("day 11 part 1: {}", day11::day11(2));
     println!("day 11 part 2: {}", day11::day11(1000000));
 
+    // Really unhappy with day 12.
+    // Had to use a lot of clone and passing whole strings...
+    // Current run time is >1s...
     println!("day 12 part 1: {}", day12::part1());
-    // println!("day 12 part 2: {}", day12::part2());
+    println!("day 12 part 2: {}", day12::part2());
 }
