@@ -50,7 +50,7 @@ fn get_galaxy_positions(
     galaxy_positions
 }
 
-fn get_whether_cols_should_expand(grid: &Vec<Vec<char>>) -> Vec<bool> {
+fn get_whether_cols_should_expand(grid: &[Vec<char>]) -> Vec<bool> {
     let mut should_expand_cols: Vec<bool> = Vec::new();
     for col_i in 0..grid.first().unwrap().len() {
         let mut cost_set: HashSet<char> = HashSet::new();
@@ -77,9 +77,9 @@ fn rolling_sum(should_expand_rows: Vec<bool>) -> Vec<i64> {
     expand_rows_rolling_sum
 }
 
-fn get_whether_rows_should_expand(grid: &Vec<Vec<char>>) -> Vec<bool> {
+fn get_whether_rows_should_expand(grid: &[Vec<char>]) -> Vec<bool> {
     let mut should_expand_rows: Vec<bool> = Vec::new();
-    for (i, row) in grid.iter().enumerate() {
+    for row in grid.iter() {
         let cost_set: HashSet<&char> = HashSet::from_iter(row);
         if !cost_set.contains(&'#') {
             should_expand_rows.push(true)
