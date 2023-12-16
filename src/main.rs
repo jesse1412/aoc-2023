@@ -4,6 +4,7 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
 mod day1_2015;
 mod day2;
 mod day3;
@@ -54,8 +55,8 @@ fn main() {
     // Really unhappy with day 12.
     // Had to use a lot of clone and passing whole strings...
     // Current run time is >1s...
-    println!("day 12 part 1: {}", day12::part1());
-    println!("day 12 part 2: {}", day12::part2());
+    // println!("day 12 part 1: {}", day12::part1());
+    // println!("day 12 part 2: {}", day12::part2());
 
     println!("day 13 part 1: {}", day13::part1());
     println!("day 13 part 2: {}", day13::part2());
@@ -63,6 +64,9 @@ fn main() {
     // Again, unhappy with day 12.
     // Had to use a lot of data duplication.
     // Current run time is >1s...
-    println!("day 14 part 1: {}", day14::part1());
-    println!("day 14 part 2: {}", day14::part2(1000000000));
+    // println!("day 14 part 1: {}", day14::part1());
+    // println!("day 14 part 2: {}", day14::part2(1000000000));
+
+    println!("day 15 part 1: {}", day15::part1());
+    println!("day 15 part 2: {}", day15::part2());
 }
