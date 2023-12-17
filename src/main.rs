@@ -5,6 +5,7 @@ mod day12;
 mod day13;
 mod day14;
 mod day15;
+mod day16;
 mod day1_2015;
 mod day2;
 mod day3;
@@ -70,4 +71,9 @@ fn main() {
 
     println!("day 15 part 1: {}", day15::part1());
     println!("day 15 part 2: {}", day15::part2());
+
+    // Not too happy about part 2 here.
+    // I just brute forced it, but it takes ~250ms so it's hard to care.
+    println!("day 16 part 1: {}", day16::part1());
+    println!("day 16 part 2: {}", day16::part2());
 }
