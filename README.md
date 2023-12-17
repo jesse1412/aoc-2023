@@ -1,7 +1,9 @@
 # Rust AOC 2023 solutions.
 
-## Day 1-14 benchmarks.
+## Day 1-15 benchmarks.
 PS C:\Projects\rust\aoc-2023> hyperfine .\target\release\aoc-2023.exe --warmup 10
 Benchmark 1: .\target\release\aoc-2023.exe
-  Time (mean ± σ):     363.7 ms ±   5.2 ms    [User: 306.2 ms, System: 40.3 ms]
-  Range (min … max):   353.6 ms … 371.1 ms    10 runs
+  Time (mean ± σ):     144.8 ms ±   3.9 ms    [User: 125.0 ms, System: 6.1 ms]
+  Range (min … max):   140.1 ms … 151.1 ms    20 runs
+
+![Alt text](aoc-2023-all-days-profile.svg?raw=true "Flame graph of performance")
