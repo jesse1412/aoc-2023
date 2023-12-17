@@ -39,7 +39,7 @@ pub fn part2() -> u32 {
             }
             Instruction::Remove(key) => {
                 let box_vec = &mut boxes[get_instruction_hash(&key) as usize];
-                box_vec.retain(|(k, v)| *k != key);
+                box_vec.retain(|(k, _)| *k != key);
             }
         }
     }

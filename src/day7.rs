@@ -104,11 +104,11 @@ impl Ord for Hand {
         for (c_lhs, c_rhs) in self.hand.chars().zip(other.hand.chars()) {
             let v_lhs = map_chars_to_hand_value(c_lhs);
             let v_rhs = map_chars_to_hand_value(c_rhs);
-            if v_lhs < v_rhs {
-                return std::cmp::Ordering::Less;
-            } else if v_lhs > v_rhs {
-                return std::cmp::Ordering::Greater;
-            }
+            match v_lhs.cmp(&v_rhs) {
+                std::cmp::Ordering::Less => return std::cmp::Ordering::Less,
+                std::cmp::Ordering::Greater => return std::cmp::Ordering::Greater,
+                std::cmp::Ordering::Equal => (),
+            };
         }
         std::cmp::Ordering::Equal
     }
@@ -174,11 +174,11 @@ impl Ord for Hand2 {
         for (c_lhs, c_rhs) in self.hand.chars().zip(other.hand.chars()) {
             let v_lhs = map_chars_to_hand_value2(c_lhs);
             let v_rhs = map_chars_to_hand_value2(c_rhs);
-            if v_lhs < v_rhs {
-                return std::cmp::Ordering::Less;
-            } else if v_lhs > v_rhs {
-                return std::cmp::Ordering::Greater;
-            }
+            match v_lhs.cmp(&v_rhs) {
+                std::cmp::Ordering::Less => return std::cmp::Ordering::Less,
+                std::cmp::Ordering::Greater => return std::cmp::Ordering::Greater,
+                std::cmp::Ordering::Equal => (),
+            };
         }
         std::cmp::Ordering::Equal
     }
